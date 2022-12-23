@@ -2,15 +2,15 @@
 
 Overall Workflow: (A schematic representation available in "Overall_Architecture.jpg")
 
-	1. A Dockerfile to run the containerized version of the springboot app and 
+	1. A Dockerfile to run the containerized version of the springboot app 
 
 	2. Code commit to the GitHub repo
 
-	3. Initialize an EKS cluster (2 worker nodes used)
+ 	3. Create a Jenkins server (used an EC2 instance) and install Docker, Maven, Kubectl CLI plugins and add credentials from the KubeConfig file
 
- 	4. Create a Jenkins server (used an EC2 instance) and install Docker, Maven, Kubectl CLI plugins and add credentials from the KubeConfig file
+	4. Initialize an EKS cluster (2 worker nodes used)
 
-	5. Create the Jenkinsfile with the declarative pipeline with diff. stages (elaborated below)
+	5. Create the Jenkinsfile with the declarative pipeline with diff. stages (elaborated below) and the deployment.yaml for the kubernetes deployment
 
 
 The Jenkins pipeline contains the following stages:
